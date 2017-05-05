@@ -1,0 +1,8 @@
+<h2>Edit section here</h2>
+
+<%=form_tag '/edit_section_post' do%>
+
+	Change section name<%=text_field_tag :section_name ,"YO"%><br>
+	<%=submit_tag "submit"%>
+	<%=hidden_field_tag :section_id, @section.id%>
+<%end%>

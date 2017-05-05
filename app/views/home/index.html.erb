@@ -1,0 +1,112 @@
+
+<nav class="navbar navbar-default">
+<div class = "container">
+	<div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+		<a href="#" class="navbar-brand">Gyanopedia
+		</a>
+	</div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<%@sections.each do|s|%>
+		<ul class = "nav navbar-nav navbar-right">
+			<li>
+				<a href="#"><%=s.title%></a>
+			</li>
+		</ul>
+	<%end%>
+	</div>
+</div>
+</nav>
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="unsplash/5.jpg" alt="1">
+				<div class="carousel-caption">
+					<h1>Gyanopedia</h1>
+					<p>One of the greatest place to learn and explore!</p>
+				</div>
+			</div>
+			<div class="item"><img src="unsplash/2.jpg" alt="2"></div>
+			<div class="item"><img src="unsplash/3.jpg" alt="3"></div>
+			<div class="item"><img src="unsplash/4.jpg" alt="4"></div>
+		</div>
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+    		<span class="icon-prev"></span>
+  		</a>
+  		<a class="carousel-control right" href="#myCarousel" data-slide="next">
+  			<span class="icon-next"></span>
+  		</a>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<h3>POPULAR CATEGORIES</h3>
+		<%@sections.each do|s|%>
+		  <div class="col-md-9">
+		  	<div class = "section_title">
+		  		<%=s.title%>
+		  	</div>
+		  	<div class= "display">
+				  	<div class ="section_left">
+					  	<%@articles.each do|a| %>
+						  	<%if a.section_id_id == s.id %>
+						  		<div class = "article_pic">
+						  			<img src="/uploads/<%= a.pic %>" >
+						  		</div>
+						  		<div class = "article_title">
+						  			<%=a.title%>
+						  		</div>
+						  		<div class="created_at">
+						  			<%= a.created_at.to_formatted_s(:short)%>
+						  		</div>
+						  		<div class ="article_content">
+						  			<%=a.content.first(150)%>...
+						  		</div>
+						  		<%break%>
+						  	<%end%>
+					  	<%end%>	
+				  	</div>
+				  	<div class ="section_right">
+				  		<%flag = 1%>
+				  		<%@articles.each do|a| %>
+						  	<%if a.section_id_id == s.id %>
+						  		<div class = "article_left">
+							  		<div class = "article_left_pic">
+							  			<img src="/uploads/<%= a.pic %>" >
+							  		</div>
+							  		<div class = "article_left_title">
+							  			<%=a.title%>
+							  			<div class="created_at">
+						  					<%= a.created_at.to_formatted_s(:short)%>
+						  				</div>
+							  		</div>
+							  		
+						  		</div>
+						  		<%if flag == 5%>
+						  			<%break%>
+						  		<%else%>
+						  			<%flag = flag+1%>
+						  		<%end%>
+						  	<%end%>
+					  	<%end%>
+				  	</div>
+		  	</div>
+		  </div>
+		<%end%>  
+	</div>

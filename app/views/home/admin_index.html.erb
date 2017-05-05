@@ -1,0 +1,30 @@
+<h1>index for page handler</h1>
+
+
+
+<ul>
+	ALL SECTIONS CREATED
+	<%@sections.each do|s|%>
+		<li><%=s.title%></li>
+		<li><%=link_to "edit" ,url_for(controller: :home,action: :edit_section,section_id:s.id)%></li>
+		<li><%=link_to "delete" ,url_for(controller: :home,action: :delete_section,section_id:s.id),method: :post%></li>
+	<%end%>
+</ul>
+
+<br>
+<br>
+<ul>
+	ALL ARTICLE CREATED
+	<%@articles	.each do|s|%>
+		<li>title:  <%=s.title%>
+			content:  <%=s.content%>	
+	    	image: <img src="/uploads/<%= s.pic %>" >
+		</li>
+		<li><%=link_to "edit" ,url_for(controller: :home,action: :edit_article,article_id:s.id)%></li>
+		<li><%=link_to "delete" ,url_for(controller: :home,action: :delete_article,article_id:s.id),method: :post%></li>
+	<%end%>
+</ul>
+
+
+<%=link_to "create sections or articles" ,url_for(controller: :home,action: :create_section)%>
+

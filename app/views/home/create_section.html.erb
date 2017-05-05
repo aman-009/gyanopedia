@@ -1,0 +1,27 @@
+<h2>create section here</h2>
+
+<%=form_tag '/create_section_post' do%>
+
+	<%=text_field_tag :section_name ,"section name"%><br>
+	<%=submit_tag "submit"%>
+
+<%end%>
+
+
+<br>
+<br>
+
+<%=form_tag url_for(controller: 'home', action: 'create_article_post'),:multipart => true do%>
+
+	Title:<%=text_field_tag :title ,"article title"%><br>
+	Content:<%=text_field_tag :content ,"article content"%><br>
+	Press :<%@sections.each do|s|%>
+		<%=s.id%>
+		<%=s.title%>
+	<%end%>
+	<br>
+	Section id:<%=number_field_tag :section_id, "section id"%><br>
+	<%=file_field_tag :image%><br>
+	<%=submit_tag "submit"%>
+
+<%end%>

@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    padding-bottom: 34px;
+
+}
+
+.col-md-9{
+	height: 500px;
+	background-color: #fff;
+	justify-content:space-between;
+	box-sizing: border-box;
+	border-top: 5px solid grey;opacity:0.8;
+	border-bottom: 1px solid #ccc; 
+	box-shadow: 0px 0px 7px 0px rgba(182,182,182,0.83);
+	margin-bottom: 10px;
+	margin-left: 20%;
+	
+}
+
+.display{
+	display: flex;
+	border-top: 2px solid #ccc;
+}
+
+.row{
+	margin-top: 10px;
+}
+
+.col-md-2{
+	background-color: #c1c1c1	;
+	height: 550px;
+	border:10px solid#fff;
+	position: absolute;
+	margin-left: 2%;
+	margin-top: 2%;
+}
+
+.section_left{
+	padding :10px;
+	width: 50%;
+	border-right: 1px solid #ccc; 
+
+}
+
+.article_pic img{
+	height: 270px;
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.article_title{
+	font-size: 20px;
+	color: #283747;
+}
+
+.created_at{
+	font-size: 12px;
+	color: #c1c1c1;
+}
+
+.article_content{
+	font-size: 16px;
+	color: grey;
+}
+
+.section_title{
+	font-size: 20px;
+	color :lightgreen;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bolder;
+}
+
+.section_right{
+	font-size: 20px;
+	color :grey; 
+	padding: 10px;
+
+}
+
+.article_left_pic img{
+	height: 50px;
+}
+
+.article_left{
+	margin: 10px;
+	padding: 10px;
+	display: flex;
+	border-bottom: 1px solid #ccc; 
+}
+
+.article_left_title{
+	margin-left: 10px;
+}
+.row h3{
+	margin-left: 20%
+}
+
+.carousel .item {
+  height: 450px;
+
+}
+
+.navbar-wrapper {
+    position:relative;
+}
+
+.carousel {
+    top:0;
+}
+
+.carousel-inner {
+    width: 100%; 
+    overflow: hidden;
+    }
+
+.navbar {
+    position:absolute;
+    top:0;
+    z-index:10;
+    background: rgb(0, 0, 0); opacity: 0.8;
+    width:100%;
+    border-color: rgb(0,0,0);
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 18;
+    font-weight: bold;
+}
+

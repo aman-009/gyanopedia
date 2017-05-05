@@ -1,0 +1,17 @@
+<h2>Edit article here</h2>
+
+<%=form_tag url_for(controller: 'home', action: 'edit_article_post'),:multipart => true do%>
+
+	Title:<%=text_field_tag :title ,"article title"%><br>
+	Content:<%=text_field_tag :content ,"article content"%><br>
+	Press :<%@sections.each do|s|%>
+		<%=s.id%>
+		<%=s.title%>
+	<%end%>
+	<br>
+	Section id:<%=number_field_tag :section_id, "section id"%><br>
+	<%=file_field_tag :image%><br>
+	<%=submit_tag "submit"%>
+	<%=hidden_field_tag :article_id, @article.id%>	
+
+<%end%>
